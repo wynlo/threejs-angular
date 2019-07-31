@@ -1,0 +1,51 @@
+
+  <div id="glFullscreen" style="margin-top:20px; padding-left:20px; padding-right:20px">
+
+    <div style="left: 0; top: 50%; width:100%; height:100%; position:absolute; text-align:center; background-color:rgba(255,255,255,1)"
+         [ngStyle]="this.loaded ? {'display': 'none'} : {}">
+      <img src="assets/images/cubeloader2.2.gif" style="width:8em; height:auto" /><br />
+      <h6>Building...</h6>
+    </div>
+
+    <div id="rendererContainer" style="width: 100%; height: 100%; position:static" [ngStyle]="this.loaded ? {} : {'display': 'none'}" #rendererContainer>
+      <!--<div id="rendererContainer" style="width: 100%; height: 100%; position:static" #rendererContainer>-->
+
+      <div style="position:absolute; padding-left:40px; padding-right:40px; padding-top:5px; background-color:rgba(255,255,255,0.8)">
+        <p>
+          Component Highlighted: {{ this.componentSelected }} <br />
+        </p>
+        <p>
+          Turn: <mat-slider min="-10" max="10" step="0.05" [value]="this.turnValue" (input)="onTurnChange($event)"></mat-slider>
+          Speed: <mat-slider min="0" max="10" step="0.05" [value]="this.speedValue" (input)="onSpeedChange($event)"></mat-slider>
+        </p>
+      </div>
+
+      <div style="position:absolute; padding-right:25px; padding-top:5px; right:0;">
+
+        <button class="btn btn-secondary" style="border-radius:0; font-size:15px" (click)="resetCamera()">
+          Reset Camera <i class="fa fas fa-camera"></i>
+        </button>
+
+
+        <i class="fa fas fa-question-circle" style="font-size:25px; color:#e50000;cursor:pointer; padding-left:15px;" (click)="popupHelpOpen()"></i>
+
+      </div>
+
+      <div id="popupHelp" style="position:absolute; padding-left:20px; padding-right:25px; padding-top:5px; right:0.7%; top:200px; display:block; background-color:rgba(255,255,255,0.8)">
+        <h6><strong>Controls</strong></h6>
+        <p style="font-size:14px">
+          <img src="https://img.icons8.com/material/24/000000/mouse-left-click.png"> + Move: Rotate Camera <br />
+          <img src="https://img.icons8.com/material/24/000000/mouse-right-click.png"> + Move: Move Camera <br />
+          <img src="https://img.icons8.com/material/24/000000/mouse-scrolling.png"> Wheel: Zoom Camera <br />
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/keyboard.png" style="width:18px; height:auto"> Hold A: Turn Vessel Left <br />
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/keyboard.png" style="width:18px; height:auto"> Hold D: Turn Vessel Right <br />
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/keyboard.png" style="width:18px; height:auto"> Hold W: Increase Speed <br />
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/keyboard.png" style="width:18px; height:auto"> Hold S: Decrease Speed <br />
+        </p>
+      </div>
+
+
+
+    </div>
+    
+  </div>
