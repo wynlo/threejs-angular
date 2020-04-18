@@ -1,4 +1,4 @@
-<h3>Some simple three.js examples with animations and raycasting built on Angular during stint at DNV GL.</h3>
+<h3>Some simple three.js examples with animations and raycasting built on Angular during internship</h3>
 
 <ol>
   <li>3D Lift</li>
